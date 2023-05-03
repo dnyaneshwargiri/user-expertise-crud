@@ -1,0 +1,35 @@
+<div id="login-box">
+  <div class="left">
+    <h1>Sign up</h1>
+    <form [formGroup]="RegistrationForm" (ngSubmit)="addUser()">
+      <input type="text" formControlName="name" placeholder="Name" />
+      <input type="text" formControlName="email" placeholder="E-mail" />
+      <input
+        type="password"
+        formControlName="password"
+        placeholder="Password"
+      />
+      <input type="text" formControlName="mobile" placeholder="Mobile Number" />
+      <input
+        type="text"
+        formControlName="dob"
+        placeholder="DOB ( eg:yyyy-mm--dd )"
+      />
+      <input
+        type="text"
+        formControlName="gender"
+        placeholder="Gender (F or M)"
+      />
+      <input type="text" formControlName="user_type" placeholder="User Type" />
+
+      <input type="submit" name="signup_submit" value="Sign me up" />
+    </form>
+  </div>
+  <div class="right">
+    <span class="loginwith">Sign in with<br />social network</span>
+    <button class="social-signin facebook">Log in with facebook</button>
+    <button class="social-signin twitter">Log in with Twitter</button>
+    <button class="social-signin google">Log in with Google+</button>
+  </div>
+  <div class="or">OR</div>
+</div>

@@ -1,0 +1,32 @@
+<div class="center">
+  <h1 class="title">Work history- All Users</h1>
+  <br>
+  <br>
+  <table
+    mat-table
+    [dataSource]="usersDataSource"
+    class="mat-elevation-z8 width-75"
+  >
+    <ng-container matColumnDef="userId">
+      <th mat-header-cell *matHeaderCellDef>User Id</th>
+      <td mat-cell *matCellDef="let element">{{ element.userId }}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="expertise">
+      <th mat-header-cell *matHeaderCellDef>Area Of Expertise</th>
+      <td mat-cell *matCellDef="let element">{{ element.expertise }}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="description">
+      <th mat-header-cell *matHeaderCellDef>Description</th>
+      <td mat-cell *matCellDef="let element">{{ element.description }}</td>
+    </ng-container>
+    <ng-container matColumnDef="experience">
+      <th mat-header-cell *matHeaderCellDef>Experience</th>
+      <td mat-cell *matCellDef="let element">{{ element.experience }}</td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+  </table>
+</div>

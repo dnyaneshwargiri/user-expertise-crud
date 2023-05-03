@@ -1,0 +1,51 @@
+<div class="container">
+  <h1>Search User by expertise</h1>
+  <form
+    [formGroup]="userExpertiseSearchForm"
+    (ngSubmit)="searchUserByExpertise()"
+    class="example-form"
+  >
+    <mat-form-field class="example-full-width">
+      <mat-label> Enter user expertise</mat-label>
+      <input
+        formControlName="userExpertise"
+        [(ngModel)]="userExpertise"
+        matInput
+        placeholder="Ex. Angular, Java"
+        value=""
+      />
+    </mat-form-field>
+    <button type="submit" mat-raised-button color="accent">Search Users</button>
+  </form>
+  <br />
+  <br />
+
+  <div class="searchResults" *ngIf="showSearchResult">
+    <h2 class="center">Matches for Expertise- {{ userExpertise }}</h2>
+    <br />
+
+    <table mat-table [dataSource]="usersDataSource" class="mat-elevation-z8  width-75">
+      <ng-container matColumnDef="email">
+        <th mat-header-cell *matHeaderCellDef>Email</th>
+        <td mat-cell *matCellDef="let element">{{ element.email }}</td>
+      </ng-container>
+
+      <ng-container matColumnDef="firstName">
+        <th mat-header-cell *matHeaderCellDef>First Name</th>
+        <td mat-cell *matCellDef="let element">{{ element.firstName }}</td>
+      </ng-container>
+      <ng-container matColumnDef="lastName">
+        <th mat-header-cell *matHeaderCellDef>Last Name</th>
+        <td mat-cell *matCellDef="let element">{{ element.lastName }}</td>
+      </ng-container>
+
+      <ng-container matColumnDef="mobile">
+        <th mat-header-cell *matHeaderCellDef>Mobile</th>
+        <td mat-cell *matCellDef="let element">{{ element.mobile }}</td>
+      </ng-container>
+
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+    </table>
+  </div>
+</div>
