@@ -1,0 +1,58 @@
+
+<!-- <div id="login-box">
+    <div class="left">
+      <h1>Add Expertise here!!</h1>
+    <form [formGroup]="ExpertiseForm"  (ngSubmit)="addExpertises()">
+      <input type="text"  formControlName="area_of_expertise" placeholder="Area of Expertise" />
+      <input type="text" formControlName="description" placeholder="Description" />
+      <input type="text" formControlName="experience" placeholder="Experience" />
+  
+
+      <button type="submit" name="expertise_submit">Submit</button>
+   
+    </form>
+    </div>
+  
+  </div> -->
+
+
+  <div class="center">
+  <h1 class="title">Submit User Expertise</h1>
+
+  <form [formGroup]="ExpertiseForm" (ngSubmit)="addExpertises()">
+    <mat-form-field class="width-75">
+      <mat-label> Enter user expertise</mat-label>
+      <input
+        formControlName="area_of_expertise"
+        matInput
+        placeholder="E.g. Angular, CSS, Jest"
+        value=""
+      />
+    </mat-form-field>
+
+    <mat-form-field class="width-75">
+      <mat-label> Enter description</mat-label>
+      <input
+        formControlName="description"
+        matInput
+        placeholder="E.g. All frontend related frameworks and common tools"
+        value=""
+      />
+    </mat-form-field>
+    <mat-form-field class="width-75">
+      <mat-label> Enter user experience</mat-label>
+      <input
+        formControlName="experience"
+        matInput
+        placeholder="Enter number of years"
+        value=""
+      />
+    </mat-form-field>
+    <br/>
+    <button type="submit" mat-raised-button color="accent">
+      Submit Expertise
+    </button>
+  </form>
+</div>
+
+  

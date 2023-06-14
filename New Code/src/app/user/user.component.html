@@ -1,0 +1,80 @@
+<div class="center">
+
+  <h1 class="title">All Users</h1>
+
+  <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+
+    <ng-container matColumnDef="id">
+      <th mat-header-cell *matHeaderCellDef>User_id</th>
+      <td mat-cell *matCellDef="let element">{{ element.id }}</td>
+    </ng-container>
+  
+    <ng-container matColumnDef="email">
+      <th mat-header-cell *matHeaderCellDef>Email</th>
+      <td mat-cell *matCellDef="let element">{{ element.email }}</td>
+    </ng-container>
+  
+    <ng-container matColumnDef="name">
+      <th mat-header-cell *matHeaderCellDef> Name</th>
+      <td mat-cell *matCellDef="let element">{{ element.name }}</td>
+    </ng-container>
+    <ng-container matColumnDef="gender">
+      <th mat-header-cell *matHeaderCellDef>Gender</th>
+      <td mat-cell *matCellDef="let element">{{ element.gender }}</td>
+    </ng-container>
+  
+    <ng-container matColumnDef="mobile">
+      <th mat-header-cell *matHeaderCellDef>Mobile</th>
+      <td mat-cell *matCellDef="let element">{{ element.mobile }}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="dob">
+      <th mat-header-cell *matHeaderCellDef>DOB</th>
+      <td mat-cell *matCellDef="let element">{{ element.dob }}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="profilepic">
+      <th mat-header-cell *matHeaderCellDef>Profile Pic</th>
+      <td mat-cell *matCellDef="let element">{{ element.profilepic }}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="socialLoginId">
+      <th mat-header-cell *matHeaderCellDef>Social LoginId</th>
+      <td mat-cell *matCellDef="let element">{{ element.socialLoginId }}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="professionalSummary">
+      <th mat-header-cell *matHeaderCellDef>Professional Summary</th>
+      <td mat-cell *matCellDef="let element">{{ element.professionalSummary }}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="user_type">
+      <th mat-header-cell *matHeaderCellDef>User_Type</th>
+      <td mat-cell *matCellDef="let element">{{ element.user_type }}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="createdAt">
+      <th mat-header-cell *matHeaderCellDef>Created At</th>
+      <td mat-cell *matCellDef="let element">{{ element.createdAt | date: 'yyyy-MM-dd'}}</td>
+    </ng-container>
+  
+    <ng-container matColumnDef="actions">
+      <th mat-header-cell *matHeaderCellDef>Actions</th>
+      <td mat-cell *matCellDef="let element">
+
+        <a routerLink="/app-update-user/{{element.id}}">Edit</a>
+        
+         &nbsp; &nbsp;<button mat-icon-button color="warn" (click)="deleteUser(element.id)">
+        Delete
+        </button>
+      </td>
+    </ng-container>
+  
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+  </table>
+
+  <mat-paginator #paginator [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons></mat-paginator>
+
+</div>
+

@@ -1,0 +1,25 @@
+<div class="center">
+    <form [formGroup]="editUserExpertise" (ngSubmit)="updateUserExpertise()">
+      <div class="formGroup">
+         <label>Enter User Expertise</label>
+         <input type="text" class="form-control" placeholder="Enter Name" formControlName="area_of_expertise">
+      </div>
+    
+      <div class="formGroup">
+        <label>Enter User Description</label>
+        <input type="text" class="form-control" placeholder="Enter Email" formControlName="description">
+     </div>
+    
+     <div class="formGroup">
+        <label>Enter User Experience</label>
+        <input type="text" class="form-control" placeholder="Enter Mobile Number" formControlName="experience">
+     </div>
+    
+     <div class="formGroup">
+        <label>User Id</label>
+        <input type="text" [disabled]="useridInput" class="form-control" placeholder="Enter Mobile Number" formControlName="user_id" >
+     </div>
+
+      <button type="submit" class="btn btn-primary">Update</button>
+    </form>
+    </div>

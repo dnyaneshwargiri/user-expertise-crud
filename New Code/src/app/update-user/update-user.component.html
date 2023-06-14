@@ -1,0 +1,35 @@
+<div class="center">
+<form [formGroup]="editUser" (ngSubmit)="updateUser()">
+  <div class="formGroup">
+     <label>Name</label>
+     <input type="text" class="form-control" placeholder="Enter Name" formControlName="name">
+  </div>
+
+  <div class="formGroup">
+    <label>Email</label>
+    <input type="text" class="form-control" placeholder="Enter Email" formControlName="email">
+ </div>
+
+ <div class="formGroup">
+    <label>Mobile</label>
+    <input type="text" class="form-control" placeholder="Enter Mobile Number" formControlName="mobile">
+ </div>
+
+ <div class="formGroup">
+    <label>DOB</label>
+    <input type="text" class="form-control" placeholder="Enter DOB" formControlName="dob">
+ </div>
+
+ <div class="formGroup">
+    <label>Gender</label>
+    <input type="text" class="form-control" placeholder="Enter Gender" formControlName="gender">
+ </div>
+
+ <div class="formGroup">
+    <label>User Type</label>
+    <input type="text" class="form-control" placeholder="Enter User Type" formControlName="usertype">
+ </div>
+
+  <button type="submit" class="btn btn-primary">Update</button>
+</form>
+</div>

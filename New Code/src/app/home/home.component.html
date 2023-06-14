@@ -1,0 +1,16 @@
+<div class="topnav" *ngIf="showHeader">
+  <a *ngIf="ifAdmin" routerLink="/app-user-registration">Add User</a>
+  <a routerLink="/app-user">List User</a>
+  <a routerLink="/app-user-expertise">Add Expertise</a>
+  <a routerLink="/app-work-history">Work History</a>
+  <a routerLink="/app-search-user">Search User</a>
+  <a (click)="logout()" style="color: aqua; float: right;">Logout</a>
+  <!-- <a routerLink="/app-login">Login</a> -->
+</div>
+<div class="topnav" *ngIf="!showHeader">
+  <!-- <a routerLink="/app-user-registration">Add User</a>
+  <a routerLink="/app-login" style="color: aqua;">Login</a> -->
+  <!-- <a routerLink="/app-login">Login</a> -->
+</div>
+<router-outlet></router-outlet>
+<app-footer></app-footer>
